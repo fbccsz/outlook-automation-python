@@ -1,0 +1,11 @@
+# Ignorar dados reais
+contatos.xlsx
+relatorio_envios.txt
+
+# Ignorar arquivos temporários do Excel
+~$*.xlsx
+
+# Lixo do Python
+__pycache__/
+venv/
+.vscode/
