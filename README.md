@@ -20,8 +20,9 @@ O script utiliza a biblioteca `pywin32` para controlar a instância local do **M
 ## 📦 Como Usar
 1. Certifique-se de que o Outlook está aberto e logado na máquina.
 2. Prepare uma planilha Excel com as colunas `nome` e `email`.
-3. Configure o nome do arquivo no script (`ARQUIVO_CONTATOS`).
-4. Execute: `python automator.py`
+3. Configure o nome do arquivo no script (`CONTATOS`).
+4. Execute: `python enviador.py`
 
 ---
+
 *Este projeto respeita as políticas de segurança de rede ao não realizar conexões externas não autorizadas.*
