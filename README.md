@@ -23,6 +23,20 @@ O script utiliza a biblioteca `pywin32` para controlar a instância local do **M
 3. Configure o nome do arquivo no script (`CONTATOS`).
 4. Execute: `python enviador.py`
 
+## 🖥️ Site de teste
+
+O projeto também inclui um protótipo web local para testar o fluxo da aplicação sem
+enviar mensagens reais pelo Outlook. Abra `index.html` no navegador ou sirva a pasta
+com:
+
+```bash
+python -m http.server 8000
+```
+
+Depois acesse `http://localhost:8000`. A interface permite navegar pelo painel,
+compor uma campanha, importar um arquivo visualmente, revisar a personalização e
+executar uma simulação segura do envio.
+
 ---
 
 *Este projeto respeita as políticas de segurança de rede ao não realizar conexões externas não autorizadas.*
