@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Painel de teste para automação de newsletters pelo Outlook." />
+    <title>Mailflow · Automação de newsletters</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar">
+        <div class="brand">
+          <div class="brand-mark">M</div>
+          <div>
+            <strong>mailflow</strong>
+            <span>OUTLOOK AUTOMATION</span>
+          </div>
+        </div>
+
+        <nav class="main-nav" aria-label="Navegação principal">
+          <p class="nav-label">WORKSPACE</p>
+          <button class="nav-item active" data-section="overview"><span>⌂</span> Visão geral</button>
+          <button class="nav-item" data-section="campaign"><span>✦</span> Nova campanha</button>
+          <button class="nav-item" data-section="contacts"><span>♧</span> Contatos</button>
+          <button class="nav-item" data-section="history"><span>◷</span> Histórico</button>
+        </nav>
+
+        <div class="sidebar-bottom">
+          <div class="connection-card">
+            <div class="status-dot"></div>
+            <div>
+              <strong>Modo demonstração</strong>
+              <span>Outlook não conectado</span>
+            </div>
+            <span class="lock">⌁</span>
+          </div>
+          <button class="profile">
+            <span class="avatar">FC</span>
+            <span><strong>Fernanda Costa</strong><small>Administrador</small></span>
+            <span class="chevron">⌄</span>
+          </button>
+        </div>
+      </aside>
+
+      <main class="content">
+        <header class="topbar">
+          <div>
+            <p class="eyebrow">SEGUNDA-FEIRA, 09 NOV 2026</p>
+            <h1 id="page-title">Visão geral</h1>
+          </div>
+          <div class="top-actions">
+            <button class="icon-button" aria-label="Notificações">♢<span class="notification"></span></button>
+            <button class="help-button">?</button>
+            <button class="primary-button" id="new-campaign">+ Nova campanha</button>
+          </div>
+        </header>
+
+        <section class="view active-view" id="overview">
+          <div class="welcome-row">
+            <div>
+              <h2>Bom dia, Fernanda <span>✦</span></h2>
+              <p>Acompanhe seus envios e mantenha sua comunicação em movimento.</p>
+            </div>
+            <div class="date-filter">Últimos 30 dias <span>⌄</span></div>
+          </div>
+
+          <div class="metrics-grid">
+            <article class="metric-card">
+              <div class="metric-icon purple">✉</div>
+              <div><span class="metric-label">E-mails enviados</span><strong>1.284</strong><small class="positive">↗ 12,8% <em>vs. período anterior</em></small></div>
+              <div class="sparkline purple-line">╱╲╱╲╱╲╱╲╱</div>
+            </article>
+            <article class="metric-card">
+              <div class="metric-icon green">↗</div>
+              <div><span class="metric-label">Taxa de entrega</span><strong>98,4%</strong><small class="positive">↗ 2,1% <em>vs. período anterior</em></small></div>
+              <div class="sparkline green-line">╱╱╲╱╲╱╱╲</div>
+            </article>
+            <article class="metric-card">
+              <div class="metric-icon orange">◉</div>
+              <div><span class="metric-label">Campanhas ativas</span><strong>03</strong><small class="neutral">Em andamento</small></div>
+              <div class="sparkline orange-line">╲╱╲╱╱╲╱</div>
+            </article>
+          </div>
+
+          <div class="content-grid">
+            <article class="panel activity-panel">
+              <div class="panel-heading"><div><h3>Atividade de envios</h3><p>Volume de e-mails enviados por dia</p></div><div class="legend"><span><i class="purple-dot"></i> Enviados</span><span><i class="gray-dot"></i> Limite recomendado</span></div></div>
+              <div class="chart-wrap">
+                <div class="y-axis"><span>200</span><span>150</span><span>100</span><span>50</span><span>0</span></div>
+                <div class="chart">
+                  <div class="grid-lines"><i></i><i></i><i></i><i></i><i></i></div>
+                  <svg viewBox="0 0 760 220" preserveAspectRatio="none" aria-label="Gráfico de atividade"><path class="limit-line" d="M0 65 L760 65"></path><path class="area" d="M0 172 C32 156 44 168 70 150 S110 129 135 145 S177 121 201 138 S230 100 262 116 S300 143 330 120 S370 96 400 105 S440 76 470 94 S505 120 532 101 S570 74 603 81 S630 109 658 84 S702 54 760 64 L760 220 L0 220 Z"></path><path class="line" d="M0 172 C32 156 44 168 70 150 S110 129 135 145 S177 121 201 138 S230 100 262 116 S300 143 330 120 S370 96 400 105 S440 76 470 94 S505 120 532 101 S570 74 603 81 S630 109 658 84 S702 54 760 64"></path><circle cx="603" cy="81" r="5"></circle></svg>
+                  <div class="x-axis"><span>12 out</span><span>19 out</span><span>26 out</span><span>02 nov</span><span>09 nov</span></div>
+                </div>
+              </div>
+            </article>
+
+            <article class="panel recent-panel">
+              <div class="panel-heading"><div><h3>Campanhas recentes</h3><p>Últimos disparos realizados</p></div><button class="text-button" data-section-link="history">Ver tudo →</button></div>
+              <div class="campaign-list">
+                <div class="campaign-item"><span class="campaign-badge violet">N</span><div><strong>Newsletter de novembro</strong><small>Hoje, 09:42 · 428 destinatários</small></div><span class="pill delivered">Concluída</span></div>
+                <div class="campaign-item"><span class="campaign-badge coral">P</span><div><strong>Pesquisa de satisfação</strong><small>05 nov, 14:18 · 312 destinatários</small></div><span class="pill delivered">Concluída</span></div>
+                <div class="campaign-item"><span class="campaign-badge blue">I</span><div><strong>Informe interno #42</strong><small>02 nov, 08:05 · 544 destinatários</small></div><span class="pill warning">Com alertas</span></div>
+              </div>
+            </article>
+          </div>
+
+          <div class="tip-banner"><span class="tip-icon">✦</span><div><strong>Dica para seu próximo envio</strong><p>Você pode importar uma planilha Excel com as colunas <code>nome</code> e <code>email</code> na nova campanha.</p></div><button class="close-tip" aria-label="Fechar dica">×</button></div>
+        </section>
+
+        <section class="view" id="campaign">
+          <div class="page-intro"><div><p class="eyebrow">WORKSPACE / NOVA CAMPANHA</p><h2>Prepare seu próximo envio</h2><p>Configure a mensagem e faça uma simulação segura antes de conectar ao Outlook.</p></div><span class="demo-badge">● SIMULAÇÃO SEGURA</span></div>
+          <div class="stepper"><div class="step active"><b>1</b><span>Contatos</span></div><i></i><div class="step active"><b>2</b><span>Mensagem</span></div><i></i><div class="step active"><b>3</b><span>Prévia</span></div></div>
+          <div class="campaign-layout">
+            <div class="form-column">
+              <article class="panel form-panel"><div class="panel-heading"><div><h3>Lista de contatos</h3><p>Adicione os destinatários da campanha.</p></div><span class="count-badge" id="contact-count">3 contatos</span></div><label class="upload-zone" for="file-input"><span class="upload-icon">↑</span><strong>Arraste sua planilha aqui</strong><small>ou <u>selecione um arquivo</u> · .xlsx ou .csv</small><input type="file" id="file-input" accept=".xlsx,.csv" /></label><div class="contact-preview" id="contact-preview"></div></article>
+              <article class="panel form-panel"><div class="panel-heading"><div><h3>Mensagem</h3><p>Personalize o conteúdo do e-mail.</p></div><span class="required">Todos os campos são obrigatórios</span></div><label>Assunto<input id="subject-input" value="Sua Newsletter Exclusiva" /></label><label>Mensagem<textarea id="message-input" rows="5">Olá {{nome}}!&#10;&#10;Aqui está a notícia da semana. Esperamos que aproveite.&#10;&#10;Atenciosamente,&#10;Equipe Mailflow</textarea></label><div class="variable-hint">Use <code>{{nome}}</code> para personalizar cada mensagem.</div></article>
+              <article class="panel form-panel"><div class="panel-heading"><div><h3>Configurações de segurança</h3><p>O site usa estes limites apenas na simulação.</p></div></div><div class="settings-row"><label>Intervalo entre envios <select id="delay-select"><option>15–25 segundos</option><option>5–10 segundos (teste rápido)</option><option>30–45 segundos</option></select></label><label>Pausa a cada <select><option>190 e-mails</option><option>50 e-mails</option><option>100 e-mails</option></select></label></div></article>
+            </div>
+            <aside class="preview-column"><div class="preview-label">PRÉVIA DO E-MAIL <span>Destinatário: <b id="preview-recipient">ana@empresa.com</b></span></div><div class="email-preview"><div class="email-top"><span class="brand-mark small">M</span><span>mailflow</span><span class="email-menu">···</span></div><div class="email-meta"><span>Para</span><strong id="preview-name">Ana Souza</strong><small id="preview-email">&lt;ana@empresa.com&gt;</small></div><h3 id="preview-subject">Sua Newsletter Exclusiva</h3><div class="email-body" id="preview-body"></div><div class="email-footer">Enviado via Mailflow · Modo demonstração</div></div><button class="primary-button full-width" id="simulate-button">▶ Iniciar simulação de envio</button><p class="simulation-note">Nenhum e-mail real será enviado nesta demonstração.</p></aside>
+          </div>
+        </section>
+
+        <section class="view" id="contacts"><div class="page-intro"><div><p class="eyebrow">WORKSPACE / CONTATOS</p><h2>Sua base de contatos</h2><p>Confira os destinatários carregados para a próxima campanha.</p></div><button class="secondary-button" id="contacts-upload">↑ Importar planilha</button></div><article class="panel contacts-table"><div class="table-toolbar"><strong id="table-count">3 contatos</strong><input placeholder="⌕  Buscar contato..." id="contact-search" /></div><table><thead><tr><th>Nome</th><th>E-mail</th><th>Status</th><th>Último envio</th></tr></thead><tbody id="contacts-body"></tbody></table></article></section>
+
+        <section class="view" id="history"><div class="page-intro"><div><p class="eyebrow">WORKSPACE / HISTÓRICO</p><h2>Histórico de campanhas</h2><p>Consulte o resultado dos seus envios anteriores.</p></div></div><article class="panel contacts-table"><table><thead><tr><th>Campanha</th><th>Data</th><th>Destinatários</th><th>Resultado</th></tr></thead><tbody><tr><td><strong>Newsletter de novembro</strong></td><td>09 nov 2026, 09:42</td><td>428</td><td><span class="pill delivered">Concluída</span></td></tr><tr><td><strong>Pesquisa de satisfação</strong></td><td>05 nov 2026, 14:18</td><td>312</td><td><span class="pill delivered">Concluída</span></td></tr><tr><td><strong>Informe interno #42</strong></td><td>02 nov 2026, 08:05</td><td>544</td><td><span class="pill warning">Com alertas</span></td></tr></tbody></table></article></section>
+      </main>
+    </div>
+    <div class="toast" id="toast" role="status"></div>
+    <script src="app.js"></script>
+  </body>
+</html>
