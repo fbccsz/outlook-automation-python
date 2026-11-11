@@ -1,42 +1,67 @@
-# 📧 Automação de E-mail Corporativo (Outlook Bypass)
+# Outlook Automation
 
-Ferramenta desenvolvida para automação de comunicação em ambientes corporativos restritos, onde o uso de SMTP externo é bloqueado por Firewall ou Políticas de Segurança.
+Automação em Python para preparar e enviar mensagens personalizadas pelo Outlook instalado no Windows, usando uma planilha Excel como origem dos contatos.
 
-## 💡 O Desafio (Cenário Real)
-Em muitas grandes empresas, portas de envio de e-mail (587, 465) são bloqueadas e APIs externas não são permitidas. O desafio era automatizar o envio de newsletters sem violar as regras de rede da infraestrutura.
+**[Portfólio](https://www.yshdev.me/#projects)** · **[Contato](mailto:yshdev@outlook.com)**
 
-## 🚀 A Solução
-O script utiliza a biblioteca `pywin32` para controlar a instância local do **Microsoft Outlook**.
-- **Firewall Bypass:** O envio é feito pelo próprio cliente de e-mail autenticado, trafegando como uma ação legítima do usuário.
-- **Humanização:** Implementação de `random.randint` (delays aleatórios) para simular o comportamento humano e evitar bloqueios de SPAM interno.
-- **Logs:** Geração automática de relatórios de entrega (`.txt`).
-- **Pausas de Segurança:** O script pausa automaticamente a cada X envios para resfriar a conta.
+## Visão geral
 
-## 🛠️ Tecnologias
-- Python 3.12
-- PyWin32 (Automação COM)
-- Pandas (Manipulação de Excel)
+O script utiliza a interface COM do Outlook para criar mensagens na conta já configurada no computador. Os contatos são lidos com Pandas, o corpo da mensagem recebe o nome do destinatário e cada tentativa é registrada em um arquivo de log.
 
-## 📦 Como Usar
-1. Certifique-se de que o Outlook está aberto e logado na máquina.
-2. Prepare uma planilha Excel com as colunas `nome` e `email`.
-3. Configure o nome do arquivo no script (`CONTATOS`).
-4. Execute: `python enviador.py`
+O repositório também inclui um **protótipo web de simulação**, independente do script Python.
 
-## 🖥️ Site de teste
+| Versão | Comportamento |
+| --- | --- |
+| Script Python | Cria e envia mensagens reais pelo Outlook local. |
+| Protótipo web | Simula o fluxo de importação, composição e execução, sem enviar e-mails. |
 
-O projeto também inclui um protótipo web local para testar o fluxo da aplicação sem
-enviar mensagens reais pelo Outlook. Abra `index.html` no navegador ou sirva a pasta
-com:
+## Funcionalidades
 
-```bash
+- Leitura de contatos em Excel com colunas `nome` e `email`.
+- Personalização do corpo HTML.
+- Intervalos entre as tentativas e pausas configuradas no script.
+- Registro de sucessos e erros em `relatorio_envios.txt`.
+- Continuação do lote quando uma tentativa individual falha.
+
+Os logs registram o resultado da chamada ao Outlook; eles não confirmam leitura ou entrega final ao destinatário.
+
+## Tecnologias
+
+Python · Pandas · PyWin32 · OpenPyXL · HTML · CSS · JavaScript
+
+## Executar a automação
+
+Requisitos: Windows, Python e Outlook instalado e configurado com suporte à automação COM.
+
+```powershell
+git clone https://github.com/fbccsz/outlook-automation-python.git
+cd outlook-automation-python
+python -m venv .venv
+.venv\Scripts\Activate.ps1
+python -m pip install -r requirements.txt
+```
+
+1. Abra o Outlook com a conta que será utilizada.
+2. Crie `contatos.xlsx` na pasta do projeto com as colunas `nome` e `email`.
+3. Revise o assunto, o corpo HTML e os parâmetros em `enviador.py`.
+4. Execute o script para iniciar os envios reais:
+
+```powershell
+python enviador.py
+```
+
+O parâmetro `ARQUIVO_CONTATOS` define a planilha; `ARQUIVO_LOG` define o relatório. O processamento ocorre no computador local.
+
+## Experimentar a interface web
+
+Abra `index.html` no navegador ou sirva a pasta:
+
+```sh
 python -m http.server 8000
 ```
 
-Depois acesse `http://localhost:8000`. A interface permite navegar pelo painel,
-compor uma campanha, importar um arquivo visualmente, revisar a personalização e
-executar uma simulação segura do envio.
+Acesse `http://localhost:8000`. A interface permite navegar pelo painel, compor uma campanha, simular a importação, revisar a personalização e executar uma demonstração. Ela não controla o Outlook nem executa o script Python.
 
 ---
 
-*Este projeto respeita as políticas de segurança de rede ao não realizar conexões externas não autorizadas.*
+Desenvolvido por [Fabrício Silva · ysh](https://www.yshdev.me/).
