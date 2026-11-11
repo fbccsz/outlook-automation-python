@@ -1,5 +1,7 @@
 # Outlook Automation
 
+**Status:** Automação local para Windows e protótipo web de simulação.
+
 Automação em Python para preparar e enviar mensagens personalizadas pelo Outlook instalado no Windows, usando uma planilha Excel como origem dos contatos.
 
 **[Portfólio](https://www.yshdev.me/#projects)** · **[Contato](mailto:yshdev@outlook.com)**
@@ -62,6 +64,7 @@ python -m http.server 8000
 
 Acesse `http://localhost:8000`. A interface permite navegar pelo painel, compor uma campanha, simular a importação, revisar a personalização e executar uma demonstração. Ela não controla o Outlook nem executa o script Python.
 
----
+## Manutenção
 
-Desenvolvido por [Fabrício Silva · ysh](https://www.yshdev.me/).
+Mantido por **ysh** · [Portfólio](https://www.yshdev.me/) · [Contato](mailto:yshdev@outlook.com)
+
